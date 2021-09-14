@@ -12,7 +12,7 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissor_div = document.getElementById("scissor");
 
-
+// gets user input on play selection 
 function main (){
     rock_div.addEventListener('click', function(){
         playRound("rock");
@@ -25,7 +25,7 @@ function main (){
     })
 }
 
-
+// random play by computer
 function computerPlay (){
  let  x = Math.floor(Math.random() * 3);
  let play = " ";
@@ -40,7 +40,7 @@ function computerPlay (){
  return play;
 }
 
-//update score board
+//update score board with wins + losses, keeping score of draws for future enhancements 
 
 function win(computerSelection, playerSelection){
     userScore++;
@@ -86,38 +86,9 @@ function playRound (playerSelection){
     } 
 
 }
+
+//begin a game when user clicks on a item 
 main();
 
 
 
-// play a 5 round game
-function play5Rounds(){
-    let wins=0;
-    let ties=0;
-    let losses=0;
-
-        // play a round when user clicks on an item
-
-    
-        if(results == "you win!"){
-            wins +=1; 
-        }
-        if(results == "it's a tie!"){
-            ties +=1;
-        }
-        if(results == "you lost!"){
-            losses +=1;
-        }
-
-    if (wins > losses){
-        console.log("You won " + wins + "rounds" +" and we tied "+ ties + " rounds out of 5 so you win!");
-    }
-    else if(wins == losses){
-        console.group("We both won "+ wins +" rounds and we tied "+ ties + " rounds so it's a draw!");
-    }
-    else{
-        console.log("I won " + losses + " rounds and we tied "+ ties + " rounds out of 5 so I win!");
-    }
-}
-
-//Play the game!!
