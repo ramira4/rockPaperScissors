@@ -45,7 +45,7 @@ function computerPlay (){
 function win(computerSelection, playerSelection){
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_div.innerHTML = computerSelection + "  beats "+ playerSelection + ", you win!";
+    result_div.innerHTML = playerSelection + "  beats "+ computerSelection + ", you win!";
     document.getElementById(playerSelection).classList.add('green-glow');
     setTimeout(function(){document.getElementById(playerSelection).classList.remove('green-glow')},1000);
 }
